@@ -4,32 +4,48 @@ package rocks.zipcode.quiz4.fundamentals;
  * @author leon on 21/12/2018.
  */
 public class Calculator {
-    public static Double squareRoot(Double value) {
-        return null;
-    }
+//    private sysout resultArray;
 
+    public static Double squareRoot(Double value) {
+        return Math.sqrt(value);
+    }
     public static Double square(Double value) {
-        return null;
+        Double square = value * value;
+        return square;
+
     }
 
     public static Double[] squareRoots(Double... value) {
-        return null;
+        Double[] rootsArray = new Double[value.length];
+        for (int i = 0; i < value.length; i++){
+        Double result = Math.sqrt(value[i]);
+            rootsArray[i] = result;}
+                return rootsArray;
+
     }
 
     public static Double[] squares(Double... values) {
-        return null;
+        Double[] squaresArray = new Double[values.length];
+        for (int i = 0; i < values.length; i++){
+            Double result = values[i] * values[i];
+            squaresArray[i] = result;}
+        return squaresArray;
     }
 
     public static Double add(Double value1, Double value2) {
-        return null;
+        Double sum = value1 + value2;
+        return sum;
     }
 
     public static Double subtract(Double value1, Double value2) {
-        return null;
+
+        Double difference = value1 - value2;
+        return difference;
     }
 
 
     public static Double divide(Double divisor, Double dividend) {
-        return null;
+        Double result = divisor/ dividend;
+        return result;
     }
 }
