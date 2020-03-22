@@ -26,7 +26,13 @@ public class StringUtils {
         return output;
     }
     public static Boolean isIsogram(String str) {
-        return null;
+        Boolean isogram = true;
+
+        for (int i = 0; i <str.length(); i++)
+    for (int j=i+1; j<str.length(); j++)
+    if (str.charAt(i) == str.charAt(j)){
+ isogram= false; }
+        return isogram;
     }
 
     public static Boolean hasDuplicateConsecutiveCharacters(String str) {
@@ -38,9 +44,17 @@ public class StringUtils {
         return has;
     }
 
-
     public static String removeConsecutiveDuplicateCharacters(String str) {
-        char[] S = str.toCharArray();
+        StringBuilder noDupes = new StringBuilder();
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = i + 1; j < str.length(); j++)
+                if( (str.charAt(i) == str.charAt(j))|| (str.charAt(i) == str.charAt(i-1)));
+                    else noDupes.append(str.charAt(i));
+            }
+
+            return noDupes.toString();
+        }
+//        char[] S = str.toCharArray();
 //        for (int i = 0; i < str.length(); i++){
 //if (chars[i] == chars[i+1])
 //    //then skip both i and i+1;
@@ -53,21 +67,19 @@ public class StringUtils {
 ////             output.append(str.charAt(i));
 ////        }
 ////            return output.toString();
-
-        {int n = S.length;
-            if (n < 2) {
-                return str;
-            }
-            int j = 0;
-            for (int i = 1; i < n; i++) {
-                if (S[j] != S[i]) {
-                    j++;
-                    S[j] = S[i];
-                }
-            }
-            return String.valueOf(Arrays.copyOfRange(S, 0, j + 1));
-        }
-    }
+//
+//        {int n = S.length;
+//            if (n < 2) {
+//                return str;
+//            }
+//            int j = 0;
+//            for (int i = 1; i < n; i++) {
+//                if (S[j] != S[i]) {
+//                    j++;
+//                    S[j] = S[i];
+//                }
+//            }
+//            return String.valueOf(Arrays.copyOfRange(S, 0, j + 1));
 
 
     public static String invertCasing(String str) {
