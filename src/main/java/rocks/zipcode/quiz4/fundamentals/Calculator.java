@@ -9,6 +9,7 @@ public class Calculator {
     public static Double squareRoot(Double value) {
         return Math.sqrt(value);
     }
+
     public static Double square(Double value) {
         Double square = value * value;
         return square;
@@ -17,18 +18,20 @@ public class Calculator {
 
     public static Double[] squareRoots(Double... value) {
         Double[] rootsArray = new Double[value.length];
-        for (int i = 0; i < value.length; i++){
-        Double result = Math.sqrt(value[i]);
-            rootsArray[i] = result;}
-                return rootsArray;
+        for (int i = 0; i < value.length; i++) {
+            Double result = squareRoot(value[i]);
+            rootsArray[i] = result;
+        }
+        return rootsArray;
 
     }
 
     public static Double[] squares(Double... values) {
         Double[] squaresArray = new Double[values.length];
-        for (int i = 0; i < values.length; i++){
-            Double result = values[i] * values[i];
-            squaresArray[i] = result;}
+        for (int i = 0; i < values.length; i++) {
+            Double result = square(values[i]);
+            squaresArray[i] = result;
+        }
         return squaresArray;
     }
 
@@ -43,9 +46,8 @@ public class Calculator {
         return difference;
     }
 
-
     public static Double divide(Double divisor, Double dividend) {
-        Double result = divisor/ dividend;
+        Double result = divisor / dividend;
         return result;
     }
 }
