@@ -46,12 +46,20 @@ public class StringUtils {
 
     public static String removeConsecutiveDuplicateCharacters(String str) {
         StringBuilder noDupes = new StringBuilder();
-        for (int i = 0; i < str.length(); i++) {
-            for (int j = i + 1; j < str.length(); j++)
-                if( (str.charAt(i) == str.charAt(j))|| (str.charAt(i) == str.charAt(i-1)));
-                    else noDupes.append(str.charAt(i));
-            }
+//        Integer length = str.length();
+//        Character current = str.charAt(0);
+        if (str.charAt(0) != (str.charAt(1))){
+        noDupes.append(str.charAt(0));}
+//                && ((str.charAt(length-1)) != (str.charAt(length-2)))) {
+            for (int i = 1; i < str.length() - 1; i++){
+//                current = str.charAt(i);
 
+//            for (int j = i + 1; j < str.length() - 1; j++)
+                    if (((str.charAt(i)) != (str.charAt(i+1))) && ((str.charAt(i-1)) != (str.charAt(i))))
+                     noDupes.append(str.charAt(i));
+        }
+            if (str.charAt(str.length()-1) != str.charAt(str.length()-2))
+                noDupes.append(str.charAt(str.length()-1));
             return noDupes.toString();
         }
 //        char[] S = str.toCharArray();
